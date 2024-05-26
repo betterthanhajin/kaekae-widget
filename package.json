@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "package": "electron-forge package",
-    "make": "electron make",
-    "publish": "electron-forge publish"
+    "deploy:xos": "electron-builder --mac",
+    "deploy:win32": "electron-builder --win --ia32",
+    "deploy:win64": "electron-builder --win --x64",
+    "deploy:win": "yarn deploy:win32 && yarn deploy:win64"
   },
   "keywords": [],
   "author": "",
@@ -23,10 +24,54 @@
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron-forge/publisher-github": "^7.4.0",
     "@electron/fuses": "^1.8.0",
-    "electron": "^30.0.6"
+    "electron": "^30.0.6",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "productName": "kaekae-widget",
+    "appId": "com.electron.kaekae",
+    "asar": true,
+    "protocols": {
+      "name": "kaekaeElectron",
+      "schemes": [
+        "kaekaeElectron"
+      ]
+    },
+    "mac": {
+      "target": [
+        "default"
+      ]
+    },
+    "dmg": {
+      "title": "kaekae-widget"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "perMachine": true,
+      "language": 1042,
+      "shortcutName": "kaekae-widget",
+      "artifactName": "kaekae-${version}.${ext}",
+      "uninstallDisplayName": "kaeake"
+    },
+    "directories": {
+      "buildResources": "./build/",
+      "output": "./dist/"
+    }
   },
   "dependencies": {
-    "electron-dl": "^3.2.0",
     "electron-squirrel-startup": "^1.0.1",
     "update-electron-app": "^3.0.0"
   }
