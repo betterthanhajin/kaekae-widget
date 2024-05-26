@@ -1,22 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html style="overflow: hidden">
   <head>
     <meta charset="UTF-8" />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
+    <!-- <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
     <meta
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
-    />
-    <title>Hello from Electron renderer!</title>
+    /> -->
+    <script src="https://cdn.lottielab.com/s/lottie-player@1.x/player-web.min.js"></script>
+    <!-- <title>Hello from Electron renderer!</title> -->
   </head>
   <body>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
+    <!-- <h1>Hello from Electron renderer!</h1>
+    <p>👋</p> -->
+    <lottie-player
+      src="https://cdn.lottielab.com/l/ioWuiLpChiK2u0.json"
+      loop
+      autoplay
+    ></lottie-player>
     <p id="info"></p>
   </body>
+
   <script src="./renderer.js"></script>
 </html>
+<style>
+  body {
+    -webkit-app-region: drag;
+  }
+</style>

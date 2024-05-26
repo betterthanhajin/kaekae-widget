@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron-forge start",
+    "start": "electron .",
     "package": "electron-forge package",
-    "make": "electron-forge make",
+    "make": "electron make",
     "publish": "electron-forge publish"
   },
   "keywords": [],
@@ -26,6 +26,7 @@
     "electron": "^30.0.6"
   },
   "dependencies": {
+    "electron-dl": "^3.2.0",
     "electron-squirrel-startup": "^1.0.1",
     "update-electron-app": "^3.0.0"
   }
