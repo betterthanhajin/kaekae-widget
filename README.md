@@ -2,8 +2,8 @@
 
 [![Electron.js](https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white)](https://www.electronjs.org/)
 
-![게임 스크린샷](./public/pc-screenshot.png)
-![게임 스크린샷](./public/mobile-screenshot.jpeg)
+![데스크톱위젯](./public/kaekae.webp)
+
 KaeKae Widget은 귀여운 물개 캐릭터와 함께하는 데스크톱 위젯입니다. 노트북만 있다면 언제 어디서나 당신의 작업 공간에 즐거움을 더해줄 거예요!
 
 ## 주요 기능
